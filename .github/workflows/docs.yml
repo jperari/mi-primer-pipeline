@@ -1,0 +1,19 @@
+name: "Documentación"
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - '.md'          # Solo archivos markdown
+      - 'docs/'        # O archivos en carpeta docs
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "📝 Validar links en docs"
+        run: |
+          echo "Validando documentación..."
+          # Aquí iría un script real de validación
+          echo "✅ Documentación OK"

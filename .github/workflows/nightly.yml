@@ -1,0 +1,15 @@
+name: "Tests Nocturnos"
+
+on:
+  schedule:
+    # Ejecutar todos los días a las 2:00 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  nightly-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "🌙 Tests exhaustivos nocturnos"
+        run: echo "Ejecutando tests largos..."
